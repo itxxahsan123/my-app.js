@@ -1,0 +1,27 @@
+{
+    "family": "my-app",
+    "containerDefinitions": [
+        {
+            "name": "my-app-container",
+            "image": "011528293600.dkr.ecr.ap-south-1.amazonaws.com/my-app:latest",
+            "memory": 512,
+            "cpu": 256,
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ]
+        }
+    ],
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "executionRoleArn": "arn:aws:iam::011528293600:role/YourExecutionRole",
+    "taskRoleArn": "arn:aws:iam::011528293600:role/YourTaskRole",
+    "cpu": "256",
+    "memory": "512"
+}
